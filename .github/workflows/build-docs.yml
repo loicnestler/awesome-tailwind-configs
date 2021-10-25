@@ -1,0 +1,38 @@
+# steps:
+# - uses: actions/checkout@v2
+# - uses: actions/setup-node@v2
+#   with:
+#     node-version: '14'
+#     cache: 'npm'
+# - run: npm install
+# - run: npm test
+name: Build Readme + config json
+
+on:
+   push:
+      branches: [master]
+
+jobs:
+   build:
+      runs-on: ubuntu-latest
+
+      steps:
+         - uses: actions/checkout@v2
+         - name: Set Node.js 14.x
+           uses: actions/setup-node@v2
+           with:
+              node-version: 14.x
+
+         - name: Install dependencies
+           run: npm install
+
+         - name: Build docs
+           run: npm run build-docs
+
+         - uses: actions/upload-artifact@v2
+           with:
+              path: public/configs
+
+         - uses: actions/upload-artifact@v2
+           with:
+              path: README.md
