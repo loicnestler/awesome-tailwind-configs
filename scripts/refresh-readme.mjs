@@ -33,7 +33,7 @@ for (const readmePath of readmes) {
       attributes: { name, description, author },
    } = fm(readme)
    rows.push(
-      `|[${name}](/configs/${name})|${description}|[View Config](https://awesome-tailwind-configs.vercel.app/config?config=${name})|[${author}](https://github.com/${author})`
+      `|[${name}](/configs/${name})|${description}|[View](https://awesome-tailwind-configs.vercel.app/config?config=${name})|[${author}](https://github.com/${author})`
    )
 }
 

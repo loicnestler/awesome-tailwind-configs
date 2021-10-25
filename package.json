@@ -5,7 +5,8 @@
       "dev": "next dev",
       "build": "next build",
       "start": "next start",
-      "lint": "next lint"
+      "lint": "next lint",
+      "build-docs": "zx scripts/build-configs.mjs && zx scripts/refresh-readme.mjs"
    },
    "dependencies": {
       "next": "11.1.2",
